@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navigator.canShare && navigator.canShare({ files: [new File([photoBlob], `${clientCode}.jpg`, { type: 'image/jpeg' })] })) {
       try {
         const shareData = {
-          title: 'Captura de Coordenadas',
+          title: 'Localize - Captura de Coordenadas',
           text: textData,
           files: [new File([photoBlob], `${clientCode}.jpg`, { type: 'image/jpeg' })],
         };
