@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Página para capturar coordenadas de localização e foto do cliente, e compartilhá-las com segurança.">
+    <title>Localizze - Grupo Gagliardi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img id="header-image" src="gagliardi.png" alt="logotipo da Empresa">
+        </header>
+
+        <section id="client-info">
+            <form id="client-form">
+
+                <label for="client-code" aria-label="Código do Cliente">
+                    <img src="cardcode.png" alt="icone cliente"> Código do Cliente*:
+                </label>
+
+                <input type="text" id="client-code" maxlength="7" placeholder="Ex: C123456" required
+                    aria-describedby="client-code-info">
+
+                <label for="phone" aria-label="Telefone">
+                    <img src="whatsapp.png" alt="icone telefone"> Telefone do Cliente:
+                </label>
+
+                <input type="tel" id="phone" maxlength="15" placeholder="(85) 91234-4321" aria-describedby="phone-info">
+
+                <label for="email" aria-label="E-mail">
+                    <img src="mail.png" alt="icone email"> E-mail do Cliente*:
+                </label>
+
+                <input type="email" id="email" placeholder="exemplo@dominio.com" aria-describedby="email-info">
+
+                <h2>Aponte a câmera para a fachada do cliente</h2>
+                <button type="button" id="capture-photo" aria-label="Capturar Foto">Capturar Foto e Coordenadas</button>
+            </form>
+        </section>
+
+        <section id="preview">
+            <div id="photo-container">
+                <img id="photo-preview" alt="Prévia da Foto" style="display: none;">
+            </div>
+            <p id="info"></p>
+        </section>
+
+        <section id="map-section">
+            <h2 id="map-title" style="display: none;">Confira se as informações do cliente e a localização no mapa estão
+                corretos</h2>
+            <div id="map"></div>
+        </section>
+
+        <div class="buttons">
+            <button type="button" id="restart-process" style="display: none;"
+                aria-label="Cancelar Processo">Cancelar</button>
+            <button id="share-data" style="display: none;" aria-label="Compartilhar Localização">Compartilhar
+                Localização</button>
+        </div>
+    </div>
+
+    <footer>
+        O Grupo Gagliardi não armazena ou compartilha as coordenadas obtidas sem sua permissão.
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
