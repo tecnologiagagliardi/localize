@@ -45,6 +45,8 @@ label {
   margin: 10px 0 5px;
   font-size: 1rem;
   color: #555;
+  position: relative;
+  top: -5px; /* Move o texto para cima */
 }
 
 input,
