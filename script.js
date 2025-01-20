@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (phone && !validatePhone(phone)) {
-      alert('Telefone inválido. Utilize o formato: (11) 98765-4321.');
+      alert('Telefone inválido. Utilize o formato: (85) 91234-4321');
       return;
     }
 
