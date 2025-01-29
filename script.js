@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Compartilhar os dados
   shareButton.addEventListener('click', async () => {
-    const textData = `Código do Cliente: ${clientCode}\nTelefone: ${phoneInput.value}\nE-mail: ${emailInput.value}\nLatitude: ${locationData.latitude.toFixed(6)}\nLongitude: ${locationData.longitude.toFixed(6)}`;
+    const textData = `Código do Cliente: ${clientCode} Telefone: ${phoneInput.value} E-mail: ${emailInput.value} Latitude: ${locationData.latitude.toFixed(6)} Longitude: ${locationData.longitude.toFixed(6)}`;
 
     if (navigator.canShare && navigator.canShare({ files: [new File([photoBlob], `${clientCode}.jpg`, { type: 'image/jpeg' })] })) {
       try {
