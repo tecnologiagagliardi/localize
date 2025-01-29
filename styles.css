@@ -54,7 +54,7 @@ button {
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   box-sizing: border-box;
 }
 
@@ -127,7 +127,7 @@ button:hover {
   text-align: center;
   font-size: 1.1rem;
   color: #3b3b3b;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 footer {
@@ -157,7 +157,7 @@ label img {
   }
 
   button {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     padding: 8px;
   }
 
