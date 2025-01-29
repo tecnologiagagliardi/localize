@@ -15,7 +15,7 @@ body {
 .container {
   width: 90%;
   max-width: 500px;
-  background: #333;
+  background: #eeeeee;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -44,7 +44,7 @@ label {
   display: block;
   margin: 5px 0 2px; 
   font-size: 1.2rem;
-  color: #171717;
+  color: #3b3b3b;
 }
 
 input,
