@@ -119,11 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       info.innerHTML = `
-        <strong>Código do Cliente:</strong><br>${clientCode}<br>
-        <strong>Telefone:</strong><br>${phone || 'Não fornecido'}<br>
-        <strong>E-mail:</strong><br>${email || 'Não fornecido'}<br>
-        <strong>Latitude:</strong><br>${locationData.latitude.toFixed(6)}<br>
-        <strong>Longitude:</strong><br>${locationData.longitude.toFixed(6)}
+        <strong>Código do Cliente:</strong>${clientCode}<br>
+        <strong>Telefone:</strong>${phone || 'Não fornecido'}<br>
+        <strong>E-mail:</strong>${email || 'Não fornecido'}<br>
+        <strong>Latitude:</strong>${locationData.latitude.toFixed(6)}<br>
+        <strong>Longitude:</strong>${locationData.longitude.toFixed(6)}
       `;
 
       mapTitle.style.display = 'block';
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Compartilhar os dados
   shareButton.addEventListener('click', async () => {
-    const textData = `Código do Cliente: ${clientCode} Telefone: ${phoneInput.value} E-mail: ${emailInput.value} Latitude: ${locationData.latitude.toFixed(6)} Longitude: ${locationData.longitude.toFixed(6)}`;
+    const textData = `Código do Cliente: ${clientCode}\nTelefone: ${phoneInput.value}\nE-mail: ${emailInput.value}\nLatitude: ${locationData.latitude.toFixed(6)}\nLongitude: ${locationData.longitude.toFixed(6)}`;
 
     if (navigator.canShare && navigator.canShare({ files: [new File([photoBlob], `${clientCode}.jpg`, { type: 'image/jpeg' })] })) {
       try {
