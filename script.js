@@ -119,11 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       info.innerHTML = `
-        <strong>Código do Cliente:</strong>${clientCode}<br>
-        <strong>Telefone:</strong>${phone || 'Não fornecido'}<br>
-        <strong>E-mail:</strong>${email || 'Não fornecido'}<br>
-        <strong>Latitude:</strong>${locationData.latitude.toFixed(6)}<br>
-        <strong>Longitude:</strong>${locationData.longitude.toFixed(6)}
+        <strong>Código do Cliente:</strong> ${clientCode}<br>
+        <strong>Telefone:</strong> ${phone || 'Não fornecido'}<br>
+        <strong>E-mail:</strong> ${email || 'Não fornecido'}<br>
+        <strong>Latitude:</strong> ${locationData.latitude.toFixed(6)}<br>
+        <strong>Longitude:</strong> ${locationData.longitude.toFixed(6)}<br>
       `;
 
       mapTitle.style.display = 'block';
