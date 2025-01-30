@@ -42,7 +42,7 @@ h2 {
 
 label {
   display: block;
-  margin: 5px 0 2px; 
+  margin: 5px 0 2px;
   font-size: 1.1rem;
   color: #444;
 }
@@ -140,15 +140,18 @@ footer {
   background-color: #eeeeee;
   border-top: 1px solid #ddd;
 }
-label{
+
+label {
   display: flex;
   align-items: center;
   gap: 5px;
 }
+
 label img {
-  width: 24px; 
+  width: 24px;
   height: 24px;
 }
+
 /* Estilos responsivos */
 @media screen and (max-width: 500px) {
 
