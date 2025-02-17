@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await navigator.share(shareData);
       } catch (error) {
         console.log('Erro ao compartilhar os dados:', error);
-        alert('Erro ao compartilhar os dados!');
+        alert('Clique em compartilhar, Caso apareça apenas a foto basta colar as informações!');
       }
     } else if (navigator.share) {
       try {
