@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       photoPreview.style.display = 'block';
     } catch (error) {
       console.error('Erro ao acessar a câmera:', error);
-      alert('Erro ao acessar a câmera!');
+      alert('Erro ao acessar a câmera!\n\nPermita que o APP acesse a câmera do dispositivo!');
     }
   };
 
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateMap(locationData.latitude, locationData.longitude);
     } catch (error) {
       console.error('Erro ao acessar a localização:', error);
-      alert('Erro ao acessar a localização!\nVerifique se o GPS do dispositivo está ativo!');
+      alert('Erro ao acessar a localização!\n\nVerifique se o GPS do dispositivo está ativo!');
     }
   });
 
