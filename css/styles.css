@@ -1,0 +1,175 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #eeeeee;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: #eeeeee;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#header-image {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #c61414;
+  font-size: 1.2rem;
+}
+
+label {
+  display: block;
+  margin: 5px 0 2px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.25);
+}
+
+button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+#restart-process {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+#restart-process:hover {
+  background-color: #c82333;
+  border: 1px solid #c82333;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+#photo-preview {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+}
+
+/* Contêiner para centralizar a foto */
+#photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+#info {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #3b3b3b;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #eeeeee;
+  border-top: 1px solid #ddd;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+label img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 500px) {
+
+  h1,
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 8px;
+  }
+
+  #map {
+    height: 200px;
+  }
+
+  #photo-preview {
+    max-width: 90%;
+  }
+}
