@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await navigator.share({ title: 'Cadastro de Cliente', text: textData });
       } catch (error) {
         console.log('Erro ao compartilhar texto:', error);
-        alert('Erro ao compartilhar o texto!');
+        alert('Clique em compartilhar!\n\nCaso apareça apenas a foto basta colar as informações!');
       }
     } else {
       alert('Seu dispositivo não suporta a funcionalidade de compartilhamento!');
