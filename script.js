@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
       restartProcessButton.style.display = 'block';
       updateMap(locationData.latitude, locationData.longitude);
     } catch (error) {
-      console.error('Erro ao acessar a localização:\nVerifique se o GPS do dispositivo está ativo!', error);
+      console.error('Erro ao acessar a localização:', error);
       alert('Erro ao acessar a localização!\nVerifique se o GPS do dispositivo está ativo!');
     }
   });
@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
       await navigator.clipboard.writeText(textData);
       alert('Informações copiadas para a área de transferência!\n\nCaso apareça apenas a foto basta colar as informações!');
     } catch (error) {
-      console.error('Clique para compartilhar, Caso apareça apenas a foto basta colar as informações!', error);
-      alert('Caso apareça apenas a foto basta colar as informações!');
+      console.error('Erro ao copiar os dados:', error);
+      alert('Clique em compartilhar, Caso apareça apenas a foto basta colar as informações!');
     }
 
     // Verificar e compartilhar caso o dispositivo suporte
