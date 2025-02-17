@@ -1,3 +1,3 @@
 # localize
-Sistema de Geolocalização
+App de Geolocalização
 https://tecnologiagagliardi.github.io/localize/
