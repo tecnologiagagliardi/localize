@@ -131,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
       restartProcessButton.style.display = 'block';
       updateMap(locationData.latitude, locationData.longitude);
     } catch (error) {
-      console.error('Erro ao acessar a localização:', error);
-      alert('Erro ao acessar a localização!');
+      console.error('Erro ao acessar a localização:\nVerifique se o GPS do dispositivo está ativo!', error);
+      alert('Erro ao acessar a localização!\nVerifique se o GPS do dispositivo está ativo!');
     }
   });
 
