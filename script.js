@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       info.innerHTML = `
         <strong>Código Cliente:</strong> ${clientCode}<br>
-        <strong>Tel:</strong> ${phone || 'Não fornecido'}<br>
-        <strong>E-mail:</strong> ${email || 'Não fornecido'}<br>
+        <strong>Tel.:</strong> ${phone || 'Não fornecido'}<br>
+        <strong>Email:</strong> ${email || 'Não fornecido'}<br>
         <strong>Latitude:</strong> ${locationData.latitude.toFixed(6)}<br>
         <strong>Longitude:</strong> ${locationData.longitude.toFixed(6)}<br>
       `;
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Compartilhar os dados
   shareButton.addEventListener('click', async () => {
-    const textData = `Código Cliente: ${clientCode}\nTel: ${phoneInput.value}\nE-mail: ${emailInput.value}\nLatitude: ${locationData.latitude.toFixed(6)}\nLongitude: ${locationData.longitude.toFixed(6)}`;
+    const textData = `Código Cliente: ${clientCode}\nTel.: ${phoneInput.value}\nEmail: ${emailInput.value}\nLatitude: ${locationData.latitude.toFixed(6)}\nLongitude: ${locationData.longitude.toFixed(6)}`;
 
     // Copia as informações coletadas para a área de transferência
     try {
