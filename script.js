@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Informações copiadas para a área de transferência!\n\nCaso apareça apenas a foto basta colar as informações!');
     } catch (error) {
       console.error('Erro ao copiar os dados:', error);
-      alert('Clique em compartilhar, Caso apareça apenas a foto basta colar as informações!');
+      alert('Clique em compartilhar!\n\nCaso apareça apenas a foto basta colar as informações!');
     }
 
     // Verificar e compartilhar caso o dispositivo suporte
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await navigator.share(shareData);
       } catch (error) {
         console.log('Erro ao compartilhar os dados:', error);
-        alert('Clique em compartilhar, Caso apareça apenas a foto basta colar as informações!');
+        alert('Clique em compartilhar!\n\nCaso apareça apenas a foto basta colar as informações!');
       }
     } else if (navigator.share) {
       try {
