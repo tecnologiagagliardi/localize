@@ -42,6 +42,13 @@ body {
     flex-direction: column;
 }
 
+h1,
+h2 {
+  text-align: center;
+  color: #c61414;
+  font-size: 1.2rem;
+}
+
 label {
 
 }
