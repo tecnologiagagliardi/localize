@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       info.innerHTML = `
         <strong>Código Cliente:</strong> ${clientCode}<br>
         <strong>Tel.:</strong> ${phone || 'Não fornecido'}<br>
-        <strong>Email:</strong> ${email || 'Não fornecido'}<br>
+        <strong>E-mail:</strong> ${email || 'Não fornecido'}<br>
         <strong>Latitude:</strong> ${locationData.latitude.toFixed(6)}<br>
         <strong>Longitude:</strong> ${locationData.longitude.toFixed(6)}<br>
       `;
