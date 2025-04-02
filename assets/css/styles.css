@@ -70,16 +70,6 @@ input {
     box-sizing: border-box;
 }
 
-#restart-process {
-  background-color: #dc3545;
-  border: 1px solid #dc3545;
-}
-
-#restart-process:hover {
-  background-color: #c82333;
-  border: 1px solid #c82333;
-}
-
 .buttons {
   display: flex;
   gap: 10px;
