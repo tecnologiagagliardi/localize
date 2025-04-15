@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let map = null;
 
   // Validação do Código do Cliente
-  const validateClientCode = (code) => /^C\d{6}$/.test(code);
+  const validateClientCode = (code) => /^C\d{7}$/.test(code);
   const sanitizeClientCode = (code) => code.toUpperCase().replace(/[^C0-9]/g, '');
 
   // Validação do telefone
