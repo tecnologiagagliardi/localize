@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Validação do telefone
   const validatePhone = (phone) => /^\(\d{2}\)\s?\d{5}-\d{4}$/.test(phone);
   const sanitizePhone = (phone) => {
-    const cleaned = phone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    const cleaned = phone.replace(/\D/g, '');
     if (cleaned.length === 11) {
       return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7)}`;
     }
@@ -64,31 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Função para obter a localização do usuário
   const getUserLocation = () =>
     new Promise((resolve, reject) =>
       navigator.geolocation.getCurrentPosition(resolve, reject)
     );
 
-  // Atualiza o mapa com a localização
-  const updateMap = (latitude, longitude) => {
-    if (!map) {
-      map = L.map('map').setView([latitude, longitude], 15);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap contributors',
-      }).addTo(map);
-
-      L.marker([latitude, longitude])
-        .addTo(map)
-        .bindPopup(`Você está aqui!<br>Lat: ${latitude.toFixed(6)}<br>Lng: ${longitude.toFixed(6)}`)
-        .openPopup();
-    } else {
-      map.setView([latitude, longitude], 15);
-    }
-  };
-
-  // Capturar foto e mostrar a localização no mapa
+  // Capturar foto e localização
   capturePhotoButton.addEventListener('click', async () => {
     clientCode = sanitizeClientCode(clientCodeInput.value);
     const phone = sanitizePhone(phoneInput.value);
@@ -129,23 +110,40 @@ document.addEventListener('DOMContentLoaded', () => {
       mapTitle.style.display = 'block';
       shareButton.style.display = 'block';
       restartProcessButton.style.display = 'block';
-      updateMap(locationData.latitude, locationData.longitude);
+
+      if (!map) {
+        map = L.map('map').setView([locationData.latitude, locationData.longitude], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '© OpenStreetMap contributors',
+        }).addTo(map);
+      } else {
+        map.setView([locationData.latitude, locationData.longitude], 15);
+        map.eachLayer(layer => {
+          if (layer instanceof L.Marker) map.removeLayer(layer);
+        });
+      }
+
+      L.marker([locationData.latitude, locationData.longitude])
+        .addTo(map)
+        .bindPopup(`Você está aqui!<br>Lat: ${locationData.latitude.toFixed(6)}<br>Lng: ${locationData.longitude.toFixed(6)}`)
+        .openPopup();
+
     } catch (error) {
       console.error('Erro ao acessar a localização:', error);
       alert('Erro ao acessar a localização!\n\nVerifique se o GPS do dispositivo está ativo!');
     }
   });
 
-  // Reiniciar o processo
+  // Reiniciar
   restartProcessButton.addEventListener('click', () => {
     location.reload();
   });
 
-  // Compartilhar os dados
+  // Compartilhar
   shareButton.addEventListener('click', async () => {
     const textData = `Código Cliente: ${clientCode}\nTel.: ${phoneInput.value}\nE-mail: ${emailInput.value}\nLatitude: ${locationData.latitude.toFixed(6)}\nLongitude: ${locationData.longitude.toFixed(6)}`;
 
-    // Copia as informações coletadas para a área de transferência
     try {
       await navigator.clipboard.writeText(textData);
       alert('Informações copiadas para a área de transferência!\n\nCaso apareça apenas a foto basta colar as informações!');
@@ -154,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Clique em compartilhar!\n\nCaso apareça apenas a foto basta colar as informações!');
     }
 
-    // Verificar e compartilhar caso o dispositivo suporte
     if (navigator.canShare && navigator.canShare({ files: [new File([photoBlob], `${clientCode}.jpg`, { type: 'image/jpeg' })] })) {
       try {
         const shareData = {
@@ -179,12 +176,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Validação do código do cliente
+  // Sanitize inputs em tempo real
   clientCodeInput.addEventListener('input', () => {
     clientCodeInput.value = sanitizeClientCode(clientCodeInput.value);
   });
 
-  // Validação do telefone do cliente
   phoneInput.addEventListener('input', () => {
     phoneInput.value = sanitizePhone(phoneInput.value);
   });
