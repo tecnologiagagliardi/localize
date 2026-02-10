@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const clientCodeInput = document.getElementById('client-code');
-  const clientReferenceInput = document.getElementById('client-reference');
+  const clientReferenceInput = document.getElementById('clientreference');
   const capturePhotoButton = document.getElementById('capture-photo');
   const restartProcessButton = document.getElementById('restart-process');
   const photoPreview = document.getElementById('photo-preview');
@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clientCode = sanitizeClientCode(clientCodeInput.value);
     const phone = sanitizePhone(phoneInput.value);
     const email = emailInput.value;
+    const clientreference = clientReferenceInput.value;
 
     if (!validateClientCode(clientCode)) {
       alert('Código Cliente inválido!\n\nExemplo: C000001');
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <strong>Código Cliente:</strong> ${clientCode}<br>
         <strong>Tel.:</strong> ${phone || 'Não fornecido'}<br>
         <strong>E-mail:</strong> ${email || 'Não fornecido'}<br>
-        <strong>Ponto de referência</strong> ${client-reference || 'Não fornecido'}<br>
+        <strong>Ponto de referência</strong> ${clientreference || 'Não fornecido'}<br>
         <strong>Latitude:</strong> ${locationData.latitude.toFixed(6)}<br>
         <strong>Longitude:</strong> ${locationData.longitude.toFixed(6)}<br>
       `;
